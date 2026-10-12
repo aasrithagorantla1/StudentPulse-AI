@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "StudentPulse AI"
+description = "A college student success platform foundation with a responsive dashboard shell and clear navigation for academic progress, placement readiness, interventions, and college insights."
+version = "1.0.0"
+id = "artifacts/studentpulse-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22821
+
+[services.development]
+run = "pnpm --filter @workspace/studentpulse-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studentpulse-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studentpulse-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22821"
+BASE_PATH = "/"
