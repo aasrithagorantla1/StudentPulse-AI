@@ -1,0 +1,1 @@
+- [StudentPulse AI purpose](studentpulse-purpose.md) — college tool for academic monitoring, student support, placement readiness, and intervention follow-through.

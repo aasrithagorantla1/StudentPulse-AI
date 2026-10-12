@@ -11,6 +11,7 @@ import Placement from '@/pages/placement';
 import Interventions from '@/pages/interventions';
 import CollegeInsights from '@/pages/college-insights';
 import NotFound from '@/pages/not-found';
+import { StudentDataProvider } from '@/data/student-data';
 import {
   Route,
   Switch,
@@ -47,9 +48,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <Router />
-        </WouterRouter>
+        <StudentDataProvider>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+            <Router />
+          </WouterRouter>
+        </StudentDataProvider>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

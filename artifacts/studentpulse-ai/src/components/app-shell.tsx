@@ -101,6 +101,10 @@ export default function AppShell({ children }: { children: ReactNode }) {
             <span>Foundation workspace</span>
           </div>
         </header>
+        <div className="notice-bar" role="note" data-testid="notice-demo-data">
+          <Activity size={14} aria-hidden="true" />
+          <span><strong>Demonstration workspace.</strong> No live college data is connected; sample records and statistics are illustrative. Changes are held only in client memory and are lost on refresh.</span>
+        </div>
         <div className="mobile-nav-wrap"><NavigationLinks mobile /></div>
         <main className="page-content" data-testid="main-content">
           {children}
